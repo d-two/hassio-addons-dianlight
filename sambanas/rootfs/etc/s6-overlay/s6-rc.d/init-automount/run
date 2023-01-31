@@ -88,8 +88,7 @@ elif bashio::config.has_value 'moredisks' || bashio::config.true 'automount'; th
      bashio::log.info "MoreDisk or Automount option found!"
 
      # Check supported FS
-     # Send error to NULL
-     modprobe ntfs3 exfat 2> /dev/null
+     #modprobe ntfs3 exfat
      fstypes=$(IFS=$'\n' echo $(cat /proc/filesystems | grep -v nodev))
      bashio::log.blue "---------------------------------------------------"
      bashio::log.green "Supported fs: ${fstypes}"
